@@ -1,0 +1,14 @@
+{
+  "pouOffsets": {
+    "main": {
+      "kind": "PROGRAM",
+      "startLine": 1,
+      "endLine": 14
+    },
+    "motor_monitor": {
+      "kind": "PROGRAM",
+      "startLine": 16,
+      "endLine": 27
+    }
+  }
+}

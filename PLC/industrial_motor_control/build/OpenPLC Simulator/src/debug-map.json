@@ -1,0 +1,106 @@
+{
+  "version": 2,
+  "md5": "e00314fe63c42aaea44499e319b1b6a9",
+  "typeTags": {
+    "BOOL": 0,
+    "SINT": 1,
+    "USINT": 2,
+    "INT": 3,
+    "UINT": 4,
+    "DINT": 5,
+    "UDINT": 6,
+    "LINT": 7,
+    "ULINT": 8,
+    "REAL": 9,
+    "LREAL": 10,
+    "BYTE": 11,
+    "WORD": 12,
+    "DWORD": 13,
+    "LWORD": 14,
+    "TIME": 15,
+    "DATE": 16,
+    "TOD": 17,
+    "DT": 18,
+    "STRING": 19,
+    "WSTRING": 20
+  },
+  "arrays": [
+    {
+      "index": 0,
+      "count": 3
+    },
+    {
+      "index": 1,
+      "count": 5
+    },
+    {
+      "index": 2,
+      "count": 1
+    }
+  ],
+  "leaves": [
+    {
+      "arrayIdx": 0,
+      "elemIdx": 0,
+      "path": "TEMP_ALARM",
+      "type": "BOOL",
+      "size": 1
+    },
+    {
+      "arrayIdx": 0,
+      "elemIdx": 1,
+      "path": "MOTOR_TEMP",
+      "type": "REAL",
+      "size": 4
+    },
+    {
+      "arrayIdx": 0,
+      "elemIdx": 2,
+      "path": "MOTOR_TEMP_RAW",
+      "type": "INT",
+      "size": 2
+    },
+    {
+      "arrayIdx": 1,
+      "elemIdx": 0,
+      "path": "INSTANCE0.START_PB",
+      "type": "BOOL",
+      "size": 1
+    },
+    {
+      "arrayIdx": 1,
+      "elemIdx": 1,
+      "path": "INSTANCE0.MOTOR_RUN",
+      "type": "BOOL",
+      "size": 1
+    },
+    {
+      "arrayIdx": 1,
+      "elemIdx": 2,
+      "path": "INSTANCE0.STOP_PB",
+      "type": "BOOL",
+      "size": 1
+    },
+    {
+      "arrayIdx": 1,
+      "elemIdx": 3,
+      "path": "INSTANCE0.MOTOR_VOLTAGE",
+      "type": "INT",
+      "size": 2
+    },
+    {
+      "arrayIdx": 1,
+      "elemIdx": 4,
+      "path": "INSTANCE0.MOTOR_CURRENT",
+      "type": "REAL",
+      "size": 4
+    },
+    {
+      "arrayIdx": 2,
+      "elemIdx": 0,
+      "path": "INSTANCE1._TMP_GE7447174_OUT",
+      "type": "BOOL",
+      "size": 1
+    }
+  ]
+}
