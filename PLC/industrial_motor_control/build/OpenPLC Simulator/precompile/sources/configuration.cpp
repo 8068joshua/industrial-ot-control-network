@@ -10,17 +10,19 @@ namespace strucpp {
 // =============================================================================
 
 LocatedVar locatedVars[1] = {
-    { LocatedArea::Input, LocatedSize::Bit, 0, 0, {0, 0, 0}, nullptr }  // placeholder; locatedVarsCount is 0
+    { LocatedArea::Memory, LocatedSize::Word, 0, 0, {0, 0, 0}, nullptr }  // MOTOR_TEMP_RAW AT %MW0
 };
 
 Configuration_CONFIG0::Configuration_CONFIG0()
-    : INSTANCE0(&TEMP_ALARM),INSTANCE1(&TEMP_ALARM, &MOTOR_TEMP)
+    : INSTANCE0(&TEMP_ALARM),INSTANCE1(&TEMP_ALARM, &MOTOR_TEMP, &MOTOR_TEMP_RAW)
 {
     // Wire up tasks and resources
     task_programs_storage[0] = &INSTANCE0;
     task_programs_storage[1] = &INSTANCE1;
     tasks_storage[0] = TaskInstance("TASK0", 100000000LL, 1, &task_programs_storage[0], 2);
     resources_storage[0] = ResourceInstance("RES0", "PLC", &tasks_storage[0], 1);
+    // Initialize located variable pointers
+    locatedVars[0].pointer = MOTOR_TEMP_RAW.value.raw_ptr();
 }
 
 const char* Configuration_CONFIG0::get_name() const {

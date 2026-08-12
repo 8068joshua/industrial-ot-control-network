@@ -35,11 +35,21 @@
               "definition": "base-type",
               "value": "BOOL"
             },
-            "class": "global",
-            "location": "",
+            "location": "%MX0.0",
+            "initialValue": "FALSE",
             "documentation": "",
-            "debug": true,
-            "initialValue": "FALSE"
+            "debug": true
+          },
+          {
+            "name": "MOTOR_RUN",
+            "type": {
+              "definition": "base-type",
+              "value": "BOOL"
+            },
+            "location": "%QX0.1",
+            "initialValue": "",
+            "documentation": "",
+            "debug": true
           },
           {
             "name": "MOTOR_TEMP",
@@ -47,11 +57,10 @@
               "definition": "base-type",
               "value": "REAL"
             },
-            "class": "global",
             "location": "",
+            "initialValue": "55.0",
             "documentation": "",
-            "debug": true,
-            "initialValue": "55.0"
+            "debug": true
           },
           {
             "name": "MOTOR_TEMP_RAW",
@@ -59,11 +68,10 @@
               "definition": "base-type",
               "value": "INT"
             },
-            "class": "global",
-            "location": "",
+            "location": "%MW0",
+            "initialValue": "550",
             "documentation": "",
-            "debug": true,
-            "initialValue": "550"
+            "debug": true
           }
         ]
       }
@@ -72,21 +80,23 @@
     "debugVariables": {
       "global": [
         "TEMP_ALARM",
+        "MOTOR_RUN",
         "MOTOR_TEMP",
         "MOTOR_TEMP_RAW"
       ],
       "pous": {
         "main": [
+          "TEMP_ALARM",
           "START_PB",
-          "MOTOR_RUN",
           "STOP_PB",
+          "MOTOR_RUN",
           "MOTOR_VOLTAGE",
-          "MOTOR_CURRENT",
-          "TEMP_ALARM"
+          "MOTOR_CURRENT"
         ],
         "motor_monitor": [
           "TEMP_ALARM",
-          "MOTOR_TEMP"
+          "MOTOR_TEMP",
+          "MOTOR_TEMP_RAW"
         ]
       }
     }

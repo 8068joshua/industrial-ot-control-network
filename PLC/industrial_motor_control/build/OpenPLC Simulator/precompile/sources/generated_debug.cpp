@@ -30,7 +30,9 @@ const Entry debug_arr_1[5] STRUCPP_DEBUG_FLASH = {
     { (void*)&g_config.INSTANCE0.MOTOR_CURRENT, TAG_REAL, 0 },  // INSTANCE0.MOTOR_CURRENT
 };
 
-const Entry debug_arr_2[1] STRUCPP_DEBUG_FLASH = {
+const Entry debug_arr_2[3] STRUCPP_DEBUG_FLASH = {
+    { (void*)&g_config.INSTANCE1._TMP_TO_REAL4174199_OUT, TAG_REAL, 0 },  // INSTANCE1._TMP_TO_REAL4174199_OUT
+    { (void*)&g_config.INSTANCE1._TMP_DIV5113215_OUT, TAG_REAL, 0 },  // INSTANCE1._TMP_DIV5113215_OUT
     { (void*)&g_config.INSTANCE1._TMP_GE7447174_OUT, TAG_BOOL, 0 },  // INSTANCE1._TMP_GE7447174_OUT
 };
 
@@ -43,7 +45,7 @@ const Entry* const debug_arrays[3] STRUCPP_DEBUG_FLASH = {
 const uint16_t debug_array_counts[3] STRUCPP_DEBUG_FLASH = {
     3,
     5,
-    1,
+    3,
 };
 
 const uint8_t debug_array_count = 3;

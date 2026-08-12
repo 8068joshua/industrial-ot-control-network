@@ -2,6 +2,7 @@ PROGRAM motor_monitor
   VAR_EXTERNAL
     TEMP_ALARM : BOOL;
     MOTOR_TEMP : REAL;
+    MOTOR_TEMP_RAW : INT;
   END_VAR
 
 {
@@ -11,19 +12,12 @@ PROGRAM motor_monitor
     "edges": [
       {
         "type": "smoothstep",
-        "source": "INPUT-VARIABLE_ba292b55-44ac-4bb6-aa46-1101b6b395a5",
-        "sourceHandle": "output-variable",
-        "target": "BLOCK_12b21588-a426-4309-a285-7c51dddd7d12",
-        "targetHandle": "IN1",
-        "id": "xy-edge__INPUT-VARIABLE_ba292b55-44ac-4bb6-aa46-1101b6b395a5output-variable-BLOCK_12b21588-a426-4309-a285-7c51dddd7d12IN1"
-      },
-      {
-        "type": "smoothstep",
         "source": "INPUT-VARIABLE_700da2d3-64d0-4757-b01c-3f62852b9d49",
         "sourceHandle": "output-variable",
         "target": "BLOCK_12b21588-a426-4309-a285-7c51dddd7d12",
         "targetHandle": "IN2",
-        "id": "xy-edge__INPUT-VARIABLE_700da2d3-64d0-4757-b01c-3f62852b9d49output-variable-BLOCK_12b21588-a426-4309-a285-7c51dddd7d12IN2"
+        "id": "xy-edge__INPUT-VARIABLE_700da2d3-64d0-4757-b01c-3f62852b9d49output-variable-BLOCK_12b21588-a426-4309-a285-7c51dddd7d12IN2",
+        "selected": false
       },
       {
         "type": "smoothstep",
@@ -32,6 +26,47 @@ PROGRAM motor_monitor
         "target": "OUTPUT-VARIABLE_8cec27df-d3df-4471-a597-891b4e75b95d",
         "targetHandle": "input-variable",
         "id": "xy-edge__BLOCK_12b21588-a426-4309-a285-7c51dddd7d12OUT-OUTPUT-VARIABLE_8cec27df-d3df-4471-a597-891b4e75b95dinput-variable"
+      },
+      {
+        "type": "smoothstep",
+        "source": "INPUT-VARIABLE_4ce3894b-0185-4e10-a571-aef6819659b8",
+        "sourceHandle": "output-variable",
+        "target": "BLOCK_9c7c7a85-2848-4dba-aba8-84217bb8baa1",
+        "targetHandle": "IN",
+        "id": "xy-edge__INPUT-VARIABLE_4ce3894b-0185-4e10-a571-aef6819659b8output-variable-BLOCK_9c7c7a85-2848-4dba-aba8-84217bb8baa1IN"
+      },
+      {
+        "type": "smoothstep",
+        "source": "BLOCK_9c7c7a85-2848-4dba-aba8-84217bb8baa1",
+        "sourceHandle": "OUT",
+        "target": "BLOCK_26b2f381-6119-4c39-bb8c-8eff0bbd3547",
+        "targetHandle": "IN1",
+        "id": "xy-edge__BLOCK_9c7c7a85-2848-4dba-aba8-84217bb8baa1OUT-BLOCK_26b2f381-6119-4c39-bb8c-8eff0bbd3547IN1"
+      },
+      {
+        "type": "smoothstep",
+        "source": "INPUT-VARIABLE_348a3952-44b5-469e-b9b5-e670e91864fc",
+        "sourceHandle": "output-variable",
+        "target": "BLOCK_26b2f381-6119-4c39-bb8c-8eff0bbd3547",
+        "targetHandle": "IN2",
+        "id": "xy-edge__INPUT-VARIABLE_348a3952-44b5-469e-b9b5-e670e91864fcoutput-variable-BLOCK_26b2f381-6119-4c39-bb8c-8eff0bbd3547IN2"
+      },
+      {
+        "type": "smoothstep",
+        "source": "BLOCK_26b2f381-6119-4c39-bb8c-8eff0bbd3547",
+        "sourceHandle": "OUT",
+        "target": "BLOCK_12b21588-a426-4309-a285-7c51dddd7d12",
+        "targetHandle": "IN1",
+        "id": "xy-edge__BLOCK_26b2f381-6119-4c39-bb8c-8eff0bbd3547OUT-BLOCK_12b21588-a426-4309-a285-7c51dddd7d12IN1",
+        "selected": false
+      },
+      {
+        "type": "smoothstep",
+        "source": "BLOCK_26b2f381-6119-4c39-bb8c-8eff0bbd3547",
+        "sourceHandle": "OUT",
+        "target": "OUTPUT-VARIABLE_083ce5f7-4ab4-47b6-a135-d702d6a7c805",
+        "targetHandle": "input-variable",
+        "id": "xy-edge__BLOCK_26b2f381-6119-4c39-bb8c-8eff0bbd3547OUT-OUTPUT-VARIABLE_083ce5f7-4ab4-47b6-a135-d702d6a7c805input-variable"
       }
     ],
     "nodes": [
@@ -39,7 +74,7 @@ PROGRAM motor_monitor
         "id": "BLOCK_12b21588-a426-4309-a285-7c51dddd7d12",
         "type": "block",
         "position": {
-          "x": 160,
+          "x": -16,
           "y": 80
         },
         "data": {
@@ -242,94 +277,10 @@ PROGRAM motor_monitor
         "dragging": false
       },
       {
-        "id": "INPUT-VARIABLE_ba292b55-44ac-4bb6-aa46-1101b6b395a5",
-        "type": "input-variable",
-        "position": {
-          "x": 0,
-          "y": 112
-        },
-        "width": 128,
-        "height": 32,
-        "measured": {
-          "width": 128,
-          "height": 32
-        },
-        "data": {
-          "handles": [
-            {
-              "glbPosition": {
-                "x": 224,
-                "y": 144
-              },
-              "relPosition": {
-                "x": 112,
-                "y": 16
-              },
-              "id": "output-variable",
-              "position": "right",
-              "type": "source"
-            }
-          ],
-          "inputHandles": [],
-          "outputHandles": [
-            {
-              "glbPosition": {
-                "x": 224,
-                "y": 144
-              },
-              "relPosition": {
-                "x": 112,
-                "y": 16
-              },
-              "id": "output-variable",
-              "position": "right",
-              "type": "source"
-            }
-          ],
-          "outputConnector": {
-            "glbPosition": {
-              "x": 224,
-              "y": 144
-            },
-            "relPosition": {
-              "x": 112,
-              "y": 16
-            },
-            "id": "output-variable",
-            "position": "right",
-            "type": "source"
-          },
-          "numericId": "5436422",
-          "variable": {
-            "id": "",
-            "name": "MOTOR_TEMP",
-            "type": {
-              "definition": "base-type",
-              "value": "REAL"
-            },
-            "class": "local",
-            "location": "",
-            "documentation": "",
-            "debug": false
-          },
-          "executionOrder": 0,
-          "variant": "input-variable",
-          "negated": false,
-          "draggable": true,
-          "selectable": true,
-          "deletable": true
-        },
-        "deletable": true,
-        "selectable": true,
-        "draggable": true,
-        "selected": false,
-        "dragging": false
-      },
-      {
         "id": "INPUT-VARIABLE_700da2d3-64d0-4757-b01c-3f62852b9d49",
         "type": "input-variable",
         "position": {
-          "x": 0,
+          "x": -160,
           "y": 160
         },
         "width": 128,
@@ -404,7 +355,7 @@ PROGRAM motor_monitor
         "id": "OUTPUT-VARIABLE_8cec27df-d3df-4471-a597-891b4e75b95d",
         "type": "output-variable",
         "position": {
-          "x": 288,
+          "x": 80,
           "y": 112
         },
         "width": 128,
@@ -460,7 +411,629 @@ PROGRAM motor_monitor
           },
           "numericId": "5510603",
           "variable": {
-            "name": "TEMP_ALARM"
+            "name": "TEMP_ALARM",
+            "class": "external",
+            "type": {
+              "definition": "base-type",
+              "value": "BOOL"
+            },
+            "location": "",
+            "initialValue": null,
+            "documentation": "",
+            "debug": true
+          },
+          "executionOrder": 0,
+          "variant": "output-variable",
+          "negated": false,
+          "draggable": true,
+          "selectable": true,
+          "deletable": true
+        },
+        "deletable": true,
+        "selectable": true,
+        "draggable": true,
+        "selected": false,
+        "dragging": false
+      },
+      {
+        "id": "INPUT-VARIABLE_4ce3894b-0185-4e10-a571-aef6819659b8",
+        "type": "input-variable",
+        "position": {
+          "x": -576,
+          "y": 112
+        },
+        "width": 128,
+        "height": 32,
+        "measured": {
+          "width": 128,
+          "height": 32
+        },
+        "data": {
+          "handles": [
+            {
+              "glbPosition": {
+                "x": -16,
+                "y": 128
+              },
+              "relPosition": {
+                "x": 112,
+                "y": 16
+              },
+              "id": "output-variable",
+              "position": "right",
+              "type": "source"
+            }
+          ],
+          "inputHandles": [],
+          "outputHandles": [
+            {
+              "glbPosition": {
+                "x": -16,
+                "y": 128
+              },
+              "relPosition": {
+                "x": 112,
+                "y": 16
+              },
+              "id": "output-variable",
+              "position": "right",
+              "type": "source"
+            }
+          ],
+          "outputConnector": {
+            "glbPosition": {
+              "x": -16,
+              "y": 128
+            },
+            "relPosition": {
+              "x": 112,
+              "y": 16
+            },
+            "id": "output-variable",
+            "position": "right",
+            "type": "source"
+          },
+          "numericId": "1067795",
+          "variable": {
+            "id": "",
+            "name": "MOTOR_TEMP_RAW",
+            "type": {
+              "definition": "base-type",
+              "value": "INT"
+            },
+            "class": "local",
+            "location": "",
+            "documentation": "",
+            "debug": false
+          },
+          "executionOrder": 0,
+          "variant": "input-variable",
+          "negated": false,
+          "draggable": true,
+          "selectable": true,
+          "deletable": true
+        },
+        "deletable": true,
+        "selectable": true,
+        "draggable": true,
+        "selected": false,
+        "dragging": false
+      },
+      {
+        "id": "BLOCK_9c7c7a85-2848-4dba-aba8-84217bb8baa1",
+        "type": "block",
+        "position": {
+          "x": -416,
+          "y": 80
+        },
+        "data": {
+          "handles": [
+            {
+              "glbPosition": {
+                "x": -416,
+                "y": 128
+              },
+              "relPosition": {
+                "x": 0,
+                "y": 48
+              },
+              "id": "IN",
+              "position": "left",
+              "type": "target",
+              "style": {
+                "top": 48,
+                "left": 0
+              }
+            },
+            {
+              "glbPosition": {
+                "x": -332,
+                "y": 128
+              },
+              "relPosition": {
+                "x": 84,
+                "y": 48
+              },
+              "id": "OUT",
+              "position": "right",
+              "type": "source",
+              "style": {
+                "top": 48,
+                "right": 0
+              }
+            }
+          ],
+          "inputHandles": [
+            {
+              "glbPosition": {
+                "x": -416,
+                "y": 128
+              },
+              "relPosition": {
+                "x": 0,
+                "y": 48
+              },
+              "id": "IN",
+              "position": "left",
+              "type": "target",
+              "style": {
+                "top": 48,
+                "left": 0
+              }
+            }
+          ],
+          "outputHandles": [
+            {
+              "glbPosition": {
+                "x": -332,
+                "y": 128
+              },
+              "relPosition": {
+                "x": 84,
+                "y": 48
+              },
+              "id": "OUT",
+              "position": "right",
+              "type": "source",
+              "style": {
+                "top": 48,
+                "right": 0
+              }
+            }
+          ],
+          "inputConnector": {
+            "glbPosition": {
+              "x": -416,
+              "y": 128
+            },
+            "relPosition": {
+              "x": 0,
+              "y": 48
+            },
+            "id": "IN",
+            "position": "left",
+            "type": "target",
+            "style": {
+              "top": 48,
+              "left": 0
+            }
+          },
+          "outputConnector": {
+            "glbPosition": {
+              "x": -332,
+              "y": 128
+            },
+            "relPosition": {
+              "x": 84,
+              "y": 48
+            },
+            "id": "OUT",
+            "position": "right",
+            "type": "source",
+            "style": {
+              "top": 48,
+              "right": 0
+            }
+          },
+          "numericId": "4174199",
+          "variant": {
+            "name": "TO_REAL",
+            "type": "function",
+            "language": "st",
+            "variables": [
+              {
+                "name": "OUT",
+                "class": "output",
+                "type": {
+                  "definition": "base-type",
+                  "value": "REAL"
+                }
+              },
+              {
+                "name": "IN",
+                "class": "input",
+                "type": {
+                  "definition": "generic-type",
+                  "value": "ANY"
+                }
+              }
+            ],
+            "body": "",
+            "documentation": "",
+            "extensible": false,
+            "category": "TypeConversion"
+          },
+          "variable": {
+            "name": ""
+          },
+          "executionOrder": 0,
+          "executionControl": false,
+          "draggable": true,
+          "selectable": true,
+          "deletable": true
+        },
+        "width": 84,
+        "height": 72,
+        "measured": {
+          "width": 84,
+          "height": 72
+        },
+        "draggable": true,
+        "selectable": true,
+        "selected": false,
+        "dragging": false
+      },
+      {
+        "id": "BLOCK_26b2f381-6119-4c39-bb8c-8eff0bbd3547",
+        "type": "block",
+        "position": {
+          "x": -256,
+          "y": 80
+        },
+        "data": {
+          "handles": [
+            {
+              "glbPosition": {
+                "x": -256,
+                "y": 192
+              },
+              "relPosition": {
+                "x": 0,
+                "y": 48
+              },
+              "id": "IN1",
+              "position": "left",
+              "type": "target",
+              "style": {
+                "top": 48,
+                "left": 0
+              }
+            },
+            {
+              "glbPosition": {
+                "x": -256,
+                "y": 240
+              },
+              "relPosition": {
+                "x": 0,
+                "y": 96
+              },
+              "id": "IN2",
+              "position": "left",
+              "type": "target",
+              "style": {
+                "top": 96,
+                "left": 0
+              }
+            },
+            {
+              "glbPosition": {
+                "x": -172,
+                "y": 192
+              },
+              "relPosition": {
+                "x": 84,
+                "y": 48
+              },
+              "id": "OUT",
+              "position": "right",
+              "type": "source",
+              "style": {
+                "top": 48,
+                "right": 0
+              }
+            }
+          ],
+          "inputHandles": [
+            {
+              "glbPosition": {
+                "x": -256,
+                "y": 192
+              },
+              "relPosition": {
+                "x": 0,
+                "y": 48
+              },
+              "id": "IN1",
+              "position": "left",
+              "type": "target",
+              "style": {
+                "top": 48,
+                "left": 0
+              }
+            },
+            {
+              "glbPosition": {
+                "x": -256,
+                "y": 240
+              },
+              "relPosition": {
+                "x": 0,
+                "y": 96
+              },
+              "id": "IN2",
+              "position": "left",
+              "type": "target",
+              "style": {
+                "top": 96,
+                "left": 0
+              }
+            }
+          ],
+          "outputHandles": [
+            {
+              "glbPosition": {
+                "x": -172,
+                "y": 192
+              },
+              "relPosition": {
+                "x": 84,
+                "y": 48
+              },
+              "id": "OUT",
+              "position": "right",
+              "type": "source",
+              "style": {
+                "top": 48,
+                "right": 0
+              }
+            }
+          ],
+          "inputConnector": {
+            "glbPosition": {
+              "x": -256,
+              "y": 192
+            },
+            "relPosition": {
+              "x": 0,
+              "y": 48
+            },
+            "id": "IN1",
+            "position": "left",
+            "type": "target",
+            "style": {
+              "top": 48,
+              "left": 0
+            }
+          },
+          "outputConnector": {
+            "glbPosition": {
+              "x": -172,
+              "y": 192
+            },
+            "relPosition": {
+              "x": 84,
+              "y": 48
+            },
+            "id": "OUT",
+            "position": "right",
+            "type": "source",
+            "style": {
+              "top": 48,
+              "right": 0
+            }
+          },
+          "numericId": "5113215",
+          "variant": {
+            "name": "DIV",
+            "type": "function",
+            "language": "st",
+            "variables": [
+              {
+                "name": "OUT",
+                "class": "output",
+                "type": {
+                  "definition": "generic-type",
+                  "value": "ANY_NUM"
+                }
+              },
+              {
+                "name": "IN1",
+                "class": "input",
+                "type": {
+                  "definition": "generic-type",
+                  "value": "ANY_NUM"
+                }
+              },
+              {
+                "name": "IN2",
+                "class": "input",
+                "type": {
+                  "definition": "generic-type",
+                  "value": "ANY_NUM"
+                }
+              }
+            ],
+            "body": "",
+            "documentation": "",
+            "extensible": false,
+            "category": "Arithmetic"
+          },
+          "variable": {
+            "name": ""
+          },
+          "executionOrder": 0,
+          "executionControl": false,
+          "draggable": true,
+          "selectable": true,
+          "deletable": true
+        },
+        "width": 84,
+        "height": 120,
+        "measured": {
+          "width": 84,
+          "height": 120
+        },
+        "draggable": true,
+        "selectable": true,
+        "selected": false,
+        "dragging": false
+      },
+      {
+        "id": "INPUT-VARIABLE_348a3952-44b5-469e-b9b5-e670e91864fc",
+        "type": "input-variable",
+        "position": {
+          "x": -416,
+          "y": 160
+        },
+        "width": 128,
+        "height": 32,
+        "measured": {
+          "width": 128,
+          "height": 32
+        },
+        "data": {
+          "handles": [
+            {
+              "glbPosition": {
+                "x": -176,
+                "y": 192
+              },
+              "relPosition": {
+                "x": 112,
+                "y": 16
+              },
+              "id": "output-variable",
+              "position": "right",
+              "type": "source"
+            }
+          ],
+          "inputHandles": [],
+          "outputHandles": [
+            {
+              "glbPosition": {
+                "x": -176,
+                "y": 192
+              },
+              "relPosition": {
+                "x": 112,
+                "y": 16
+              },
+              "id": "output-variable",
+              "position": "right",
+              "type": "source"
+            }
+          ],
+          "outputConnector": {
+            "glbPosition": {
+              "x": -176,
+              "y": 192
+            },
+            "relPosition": {
+              "x": 112,
+              "y": 16
+            },
+            "id": "output-variable",
+            "position": "right",
+            "type": "source"
+          },
+          "numericId": "8191734",
+          "variable": {
+            "name": "10.0"
+          },
+          "executionOrder": 0,
+          "variant": "input-variable",
+          "negated": false,
+          "draggable": true,
+          "selectable": true,
+          "deletable": true
+        },
+        "deletable": true,
+        "selectable": true,
+        "draggable": true,
+        "selected": false,
+        "dragging": false
+      },
+      {
+        "id": "OUTPUT-VARIABLE_083ce5f7-4ab4-47b6-a135-d702d6a7c805",
+        "type": "output-variable",
+        "position": {
+          "x": 0,
+          "y": 16
+        },
+        "width": 128,
+        "height": 32,
+        "measured": {
+          "width": 128,
+          "height": 32
+        },
+        "data": {
+          "handles": [
+            {
+              "glbPosition": {
+                "x": -80,
+                "y": 64
+              },
+              "relPosition": {
+                "x": 0,
+                "y": 16
+              },
+              "id": "input-variable",
+              "position": "left",
+              "type": "target"
+            }
+          ],
+          "inputHandles": [
+            {
+              "glbPosition": {
+                "x": -80,
+                "y": 64
+              },
+              "relPosition": {
+                "x": 0,
+                "y": 16
+              },
+              "id": "input-variable",
+              "position": "left",
+              "type": "target"
+            }
+          ],
+          "outputHandles": [],
+          "inputConnector": {
+            "glbPosition": {
+              "x": -80,
+              "y": 64
+            },
+            "relPosition": {
+              "x": 0,
+              "y": 16
+            },
+            "id": "input-variable",
+            "position": "left",
+            "type": "target"
+          },
+          "numericId": "1568715",
+          "variable": {
+            "id": "",
+            "name": "MOTOR_TEMP",
+            "type": {
+              "definition": "base-type",
+              "value": "REAL"
+            },
+            "class": "local",
+            "location": "",
+            "documentation": "",
+            "debug": false
           },
           "executionOrder": 0,
           "variant": "output-variable",

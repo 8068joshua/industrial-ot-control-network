@@ -85,16 +85,19 @@ public:
 class Program_MOTOR_MONITOR : public ProgramBase {
 public:
     // Local variables
+    IEC_REAL _TMP_TO_REAL4174199_OUT;
+    IEC_REAL _TMP_DIV5113215_OUT;
     IEC_BOOL _TMP_GE7447174_OUT;
     // External variables (pointers to shared globals)
     GlobalVar<IEC_BOOL>* TEMP_ALARM = nullptr;
     GlobalVar<IEC_REAL>* MOTOR_TEMP = nullptr;
+    GlobalVar<IEC_INT>* MOTOR_TEMP_RAW = nullptr;
 
     // Implicit IEC 61131-3 ENO pin (mirrors EN)
     IEC_BOOL ENO = true;
 
     // Constructor
-    explicit Program_MOTOR_MONITOR(GlobalVar<IEC_BOOL>* TEMP_ALARM_ref, GlobalVar<IEC_REAL>* MOTOR_TEMP_ref);
+    explicit Program_MOTOR_MONITOR(GlobalVar<IEC_BOOL>* TEMP_ALARM_ref, GlobalVar<IEC_REAL>* MOTOR_TEMP_ref, GlobalVar<IEC_INT>* MOTOR_TEMP_RAW_ref);
 
     // Run program
     void run() override;
@@ -130,9 +133,9 @@ public:
  * The runtime iterates this array to bind variables to I/O image tables.
  */
 
-// (no located variables — placeholder entry only)
+// Forward: MOTOR_TEMP_RAW AT %MW0 in configuration
 
 extern LocatedVar locatedVars[1];
-constexpr uint32_t locatedVarsCount = 0;
+constexpr uint32_t locatedVarsCount = 1;
 
 }  // namespace strucpp
