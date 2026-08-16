@@ -87,9 +87,9 @@
       "pous": {
         "main": [
           "TEMP_ALARM",
+          "MOTOR_RUN",
           "START_PB",
           "STOP_PB",
-          "MOTOR_RUN",
           "MOTOR_VOLTAGE",
           "MOTOR_CURRENT"
         ],
