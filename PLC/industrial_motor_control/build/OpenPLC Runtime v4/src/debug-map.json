@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "md5": "f3fba068929635b6bf1c2ee8176e16bc",
+  "md5": "c8bfac024c473c7fa5ea2ef8e971921d",
   "typeTags": {
     "BOOL": 0,
     "SINT": 1,
@@ -27,7 +27,7 @@
   "arrays": [
     {
       "index": 0,
-      "count": 4
+      "count": 6
     },
     {
       "index": 1,
@@ -64,6 +64,20 @@
       "arrayIdx": 0,
       "elemIdx": 3,
       "path": "MOTOR_TEMP_RAW",
+      "type": "INT",
+      "size": 2
+    },
+    {
+      "arrayIdx": 0,
+      "elemIdx": 4,
+      "path": "TEST_QW",
+      "type": "INT",
+      "size": 2
+    },
+    {
+      "arrayIdx": 0,
+      "elemIdx": 5,
+      "path": "MODBUS_TEMP_IN",
       "type": "INT",
       "size": 2
     },

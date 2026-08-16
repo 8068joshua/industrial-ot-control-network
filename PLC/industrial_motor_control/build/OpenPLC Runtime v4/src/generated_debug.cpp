@@ -16,11 +16,13 @@ extern ::strucpp::Configuration_CONFIG0 g_config;
 
 namespace strucpp { namespace debug {
 
-const Entry debug_arr_0[4] STRUCPP_DEBUG_FLASH = {
+const Entry debug_arr_0[6] STRUCPP_DEBUG_FLASH = {
     { (void*)&TEMP_ALARM.value, TAG_BOOL, 0 },  // TEMP_ALARM
     { (void*)&MOTOR_RUN.value, TAG_BOOL, 0 },  // MOTOR_RUN
     { (void*)&MOTOR_TEMP.value, TAG_REAL, 0 },  // MOTOR_TEMP
     { (void*)&MOTOR_TEMP_RAW.value, TAG_INT, 0 },  // MOTOR_TEMP_RAW
+    { (void*)&TEST_QW.value, TAG_INT, 0 },  // TEST_QW
+    { (void*)&MODBUS_TEMP_IN.value, TAG_INT, 0 },  // MODBUS_TEMP_IN
 };
 
 const Entry debug_arr_1[4] STRUCPP_DEBUG_FLASH = {
@@ -43,7 +45,7 @@ const Entry* const debug_arrays[3] STRUCPP_DEBUG_FLASH = {
 };
 
 const uint16_t debug_array_counts[3] STRUCPP_DEBUG_FLASH = {
-    4,
+    6,
     4,
     3,
 };

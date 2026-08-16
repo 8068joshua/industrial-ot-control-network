@@ -8,7 +8,7 @@
     "motor_monitor": {
       "kind": "PROGRAM",
       "startLine": 16,
-      "endLine": 33
+      "endLine": 35
     }
   }
 }

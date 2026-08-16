@@ -60,7 +60,9 @@ class Configuration_CONFIG0;
 inline GlobalVar<IEC_BOOL> TEMP_ALARM{false};
 inline GlobalVar<IEC_BOOL> MOTOR_RUN{false};
 inline GlobalVar<IEC_REAL> MOTOR_TEMP{55.0};
-inline GlobalVar<IEC_INT> MOTOR_TEMP_RAW{550};
+inline GlobalVar<IEC_INT> MOTOR_TEMP_RAW{0};
+inline GlobalVar<IEC_INT> TEST_QW{0};
+inline GlobalVar<IEC_INT> MODBUS_TEMP_IN{0};
 
 class Program_MAIN : public ProgramBase {
 public:
@@ -93,12 +95,14 @@ public:
     GlobalVar<IEC_BOOL>* TEMP_ALARM = nullptr;
     GlobalVar<IEC_REAL>* MOTOR_TEMP = nullptr;
     GlobalVar<IEC_INT>* MOTOR_TEMP_RAW = nullptr;
+    GlobalVar<IEC_INT>* TEST_QW = nullptr;
+    GlobalVar<IEC_INT>* MODBUS_TEMP_IN = nullptr;
 
     // Implicit IEC 61131-3 ENO pin (mirrors EN)
     IEC_BOOL ENO = true;
 
     // Constructor
-    explicit Program_MOTOR_MONITOR(GlobalVar<IEC_BOOL>* TEMP_ALARM_ref, GlobalVar<IEC_REAL>* MOTOR_TEMP_ref, GlobalVar<IEC_INT>* MOTOR_TEMP_RAW_ref);
+    explicit Program_MOTOR_MONITOR(GlobalVar<IEC_BOOL>* TEMP_ALARM_ref, GlobalVar<IEC_REAL>* MOTOR_TEMP_ref, GlobalVar<IEC_INT>* MOTOR_TEMP_RAW_ref, GlobalVar<IEC_INT>* TEST_QW_ref, GlobalVar<IEC_INT>* MODBUS_TEMP_IN_ref);
 
     // Run program
     void run() override;
@@ -137,8 +141,10 @@ public:
 // Forward: TEMP_ALARM AT %MX0.0 in configuration
 // Forward: MOTOR_RUN AT %QX0.1 in configuration
 // Forward: MOTOR_TEMP_RAW AT %MW0 in configuration
+// Forward: TEST_QW AT %QW0 in configuration
+// Forward: MODBUS_TEMP_IN AT %IW0 in configuration
 
-extern LocatedVar locatedVars[3];
-constexpr uint32_t locatedVarsCount = 3;
+extern LocatedVar locatedVars[5];
+constexpr uint32_t locatedVarsCount = 5;
 
 }  // namespace strucpp

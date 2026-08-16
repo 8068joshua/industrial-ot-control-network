@@ -9,14 +9,16 @@ namespace strucpp {
 // Located Variables Descriptor Array
 // =============================================================================
 
-LocatedVar locatedVars[3] = {
+LocatedVar locatedVars[5] = {
     { LocatedArea::Memory, LocatedSize::Bit, 0, 0, {0, 0, 0}, nullptr },  // TEMP_ALARM AT %MX0.0
     { LocatedArea::Output, LocatedSize::Bit, 0, 1, {0, 0, 0}, nullptr },  // MOTOR_RUN AT %QX0.1
-    { LocatedArea::Memory, LocatedSize::Word, 0, 0, {0, 0, 0}, nullptr }  // MOTOR_TEMP_RAW AT %MW0
+    { LocatedArea::Memory, LocatedSize::Word, 0, 0, {0, 0, 0}, nullptr },  // MOTOR_TEMP_RAW AT %MW0
+    { LocatedArea::Output, LocatedSize::Word, 0, 0, {0, 0, 0}, nullptr },  // TEST_QW AT %QW0
+    { LocatedArea::Input, LocatedSize::Word, 0, 0, {0, 0, 0}, nullptr }  // MODBUS_TEMP_IN AT %IW0
 };
 
 Configuration_CONFIG0::Configuration_CONFIG0()
-    : INSTANCE0(&TEMP_ALARM, &MOTOR_RUN),INSTANCE1(&TEMP_ALARM, &MOTOR_TEMP, &MOTOR_TEMP_RAW)
+    : INSTANCE0(&TEMP_ALARM, &MOTOR_RUN),INSTANCE1(&TEMP_ALARM, &MOTOR_TEMP, &MOTOR_TEMP_RAW, &TEST_QW, &MODBUS_TEMP_IN)
 {
     // Wire up tasks and resources
     task_programs_storage[0] = &INSTANCE0;
@@ -27,6 +29,8 @@ Configuration_CONFIG0::Configuration_CONFIG0()
     locatedVars[0].pointer = TEMP_ALARM.value.raw_ptr();
     locatedVars[1].pointer = MOTOR_RUN.value.raw_ptr();
     locatedVars[2].pointer = MOTOR_TEMP_RAW.value.raw_ptr();
+    locatedVars[3].pointer = TEST_QW.value.raw_ptr();
+    locatedVars[4].pointer = MODBUS_TEMP_IN.value.raw_ptr();
 }
 
 const char* Configuration_CONFIG0::get_name() const {

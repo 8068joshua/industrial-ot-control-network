@@ -69,7 +69,29 @@
               "value": "INT"
             },
             "location": "%MW0",
-            "initialValue": "550",
+            "initialValue": "",
+            "documentation": "",
+            "debug": true
+          },
+          {
+            "name": "TEST_QW",
+            "type": {
+              "definition": "base-type",
+              "value": "INT"
+            },
+            "location": "%QW0",
+            "initialValue": "",
+            "documentation": "",
+            "debug": true
+          },
+          {
+            "name": "MODBUS_TEMP_IN",
+            "type": {
+              "definition": "base-type",
+              "value": "INT"
+            },
+            "location": "%IW0",
+            "initialValue": "",
             "documentation": "",
             "debug": true
           }
@@ -82,7 +104,9 @@
         "TEMP_ALARM",
         "MOTOR_RUN",
         "MOTOR_TEMP",
-        "MOTOR_TEMP_RAW"
+        "MOTOR_TEMP_RAW",
+        "TEST_QW",
+        "MODBUS_TEMP_IN"
       ],
       "pous": {
         "main": [
@@ -96,7 +120,9 @@
         "motor_monitor": [
           "TEMP_ALARM",
           "MOTOR_TEMP",
-          "MOTOR_TEMP_RAW"
+          "MOTOR_TEMP_RAW",
+          "TEST_QW",
+          "MODBUS_TEMP_IN"
         ]
       }
     }

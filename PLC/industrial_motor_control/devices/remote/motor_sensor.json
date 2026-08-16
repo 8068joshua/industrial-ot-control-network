@@ -1,0 +1,30 @@
+{
+  "name": "motor_sensor",
+  "protocol": "modbus-tcp",
+  "modbusTcpConfig": {
+    "host": "host.docker.internal",
+    "port": 1502,
+    "slaveId": 1,
+    "timeout": 1000,
+    "ioGroups": [
+      {
+        "id": "7e5ad000-178c-4e48-b57d-11a737cd382a",
+        "name": "motor_temperature",
+        "functionCode": "3",
+        "cycleTime": 1000,
+        "offset": "1",
+        "length": 1,
+        "errorHandling": "set-to-zero",
+        "ioPoints": [
+          {
+            "id": "motor_temperature_0",
+            "name": "motor_temperature_0",
+            "type": "Analog Input (Holding Register)",
+            "iecLocation": "%IW0",
+            "alias": ""
+          }
+        ]
+      }
+    ]
+  }
+}

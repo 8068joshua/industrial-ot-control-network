@@ -3,6 +3,8 @@ PROGRAM motor_monitor
     TEMP_ALARM : BOOL;
     MOTOR_TEMP : REAL;
     MOTOR_TEMP_RAW : INT;
+    TEST_QW : INT;
+    MODBUS_TEMP_IN : INT;
   END_VAR
 
 {
@@ -439,7 +441,7 @@ PROGRAM motor_monitor
         "id": "INPUT-VARIABLE_4ce3894b-0185-4e10-a571-aef6819659b8",
         "type": "input-variable",
         "position": {
-          "x": -576,
+          "x": -608,
           "y": 112
         },
         "width": 128,
@@ -496,7 +498,7 @@ PROGRAM motor_monitor
           "numericId": "1067795",
           "variable": {
             "id": "",
-            "name": "MOTOR_TEMP_RAW",
+            "name": "MODBUS_TEMP_IN",
             "type": {
               "definition": "base-type",
               "value": "INT"
